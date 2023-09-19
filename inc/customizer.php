@@ -35,6 +35,31 @@ function an_hour_a_week_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'an_hour_a_week_customize_register' );
 
 /**
+* Add theme specific options to the customizer
+* @param WP_Customize_Manager $wp_customize Theme Customizer object
+ */
+function an_hour_a_week_add_customizer_options( $wp_customize ) {
+
+    function sanitize_checkbox($input) {
+      return (isset($input) && true === $input) ? true : false;
+    }
+
+    $wp_customize->add_setting('display_header_fleur_de_lis', array(
+        'default' => true, // Set the default value
+        'sanitize_callback' => 'sanitize_checkbox',
+    ));
+
+    // Add a control for the checkbox
+    $wp_customize->add_control('display_header_fleur_de_lis', array(
+        'label' => 'Display Scouts Fleur De Lis after site title',
+        'section' => 'title_tagline',
+        'type' => 'checkbox',
+    ));
+
+}
+add_action( 'customize_register', 'an_hour_a_week_add_customizer_options' );
+
+/**
  * Render the site title for the selective refresh partial.
  *
  * @return void

@@ -541,6 +541,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 /* Links
@@ -654,8 +655,31 @@ textarea {
 # Layouts
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
+/* Site wide
+-------------------------------------------- */
+.site-title {
+  margin-top: 0;
+  font-size: 1.2em;
+}
+.site-title > a {
+  text-decoration: none; /* no underline */
+  color: black;
+  font-weight: 900;
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: row;
+}
+
+.site-title-img {
+  margin-top: -0.7em;
+  margin-left: 0.5em;
+  max-height: 2.5em;
+}
+
 # Components
+/*--------------------------------------------------------------
 --------------------------------------------------------------*/
 
 /* Navigation
@@ -710,13 +734,22 @@ textarea {
 }
 
 .menu-menu-container {
-  margin-top: 1em;
+  margin-top: 0;
 }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+}
+
+.menu-item {
+  margin-left: 1.5em;
+}
+.menu-item a {
+  color: black;
+  text-decoration: none; /* no underline */
+  font-weight: 600;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -761,6 +794,10 @@ textarea {
 --------------------------------------------- */
 #page {
   background-color: white;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .sticky {
@@ -791,14 +828,14 @@ textarea {
 @media screen and (max-width: 60em) {
   .post,
   .page {
-    margin: 1em 5em;
+    margin: 1em;
   }
 }
 
-/* 31 - 60em */
+/* 31 - 80em */
 @media screen and (min-width: 61em)
+  and (max-width: 80em) {
   .post,
-  and (max-width: 90em) {
   .page {
     margin: 1em 10em;
   }
