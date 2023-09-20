@@ -167,7 +167,13 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/admin/customizer.php';
+
+/*
+* Menu configuration additions
+*/
+require get_template_directory() . '/inc/admin/nav-menu.php';
+require get_template_directory() . '/inc/nav-menu.php';
 
 /**
  * Load Jetpack compatibility file.

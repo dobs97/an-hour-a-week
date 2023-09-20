@@ -678,6 +678,12 @@ textarea {
   max-height: 2.5em;
 }
 
+.custom-logo {
+  max-height: 3.7em;
+  width: auto;
+  margin-top: -1em;
+}
+
 # Components
 /*--------------------------------------------------------------
 --------------------------------------------------------------*/
@@ -750,6 +756,10 @@ textarea {
   color: black;
   text-decoration: none; /* no underline */
   font-weight: 600;
+}
+
+.menu-item-display-btn {
+  background-color: yellow;
 }
 
 @media screen and (min-width: 37.5em) {

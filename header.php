@@ -28,14 +28,20 @@
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php
-        the_custom_logo();
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-        <?php
-        if( get_theme_mod('display_header_fleur_de_lis') ) {
-        ?>
-         <img class="site-title-img" src="<?php echo get_template_directory_uri(); ?>/images/fleurdelis.svg" alt="Scouts logo"/>
-        <?php
+        if( has_custom_logo() )
+        {
+          the_custom_logo();
+        }
+        else
+        {
+          ?>
+          <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <?php
+          if( get_theme_mod('display_header_fleur_de_lis') ) {
+          ?>
+          <img class="site-title-img" src="<?php echo get_template_directory_uri(); ?>/images/fleurdelis.svg" alt="Scouts logo"/>
+          <?php
+          }
         }
 			$an_hour_a_week_description = get_bloginfo( 'description', 'display' );
 			if ( $an_hour_a_week_description || is_customize_preview() ) :
