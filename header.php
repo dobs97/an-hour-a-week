@@ -35,19 +35,23 @@
         else
         {
           ?>
-          <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <div> 
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+          <?php
+          $an_hour_a_week_description = get_bloginfo( 'description', 'display' );
+          if ( $an_hour_a_week_description || is_customize_preview() ) :
+            ?>
+            <p class="site-description"><?php echo $an_hour_a_week_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+          <?php endif; ?>
+          </div>
           <?php
           if( get_theme_mod('display_header_fleur_de_lis') ) {
           ?>
-          <img class="site-title-img" src="<?php echo get_template_directory_uri(); ?>/images/fleurdelis.svg" alt="Scouts logo"/>
+          <div class="site-title-img" alt="Scouts logo"></div>
           <?php
           }
         }
-			$an_hour_a_week_description = get_bloginfo( 'description', 'display' );
-			if ( $an_hour_a_week_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $an_hour_a_week_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
+        ?>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation">

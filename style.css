@@ -541,7 +541,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 /* Links
@@ -659,6 +659,7 @@ textarea {
 -------------------------------------------- */
 .site-title {
   margin-top: 0;
+  margin-bottom: 0;
   font-size: 1.2em;
 }
 .site-title > a {
@@ -667,31 +668,46 @@ textarea {
   font-weight: 900;
 }
 
+.site-description {
+  margin-top: -0.3em;
+  margin-bottom: 0;
+}
+
 .site-branding {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .site-title-img {
-  margin-top: -0.7em;
-  margin-left: 0.5em;
-  max-height: 2.5em;
+  margin-left: 0.6em;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: red;
+  mask-image: url(images/fleurdelis.svg);
+  -webkit-mask-image: url(images/fleurdelis.svg);
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
 }
 
 .custom-logo {
   max-height: 3.7em;
   width: auto;
-  margin-top: -1em;
 }
 
-# Components
 /*--------------------------------------------------------------
+# Components
 --------------------------------------------------------------*/
 
 /* Navigation
 --------------------------------------------- */
 .main-navigation {
-	display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-navigation ul {
