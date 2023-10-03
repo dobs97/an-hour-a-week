@@ -46,6 +46,7 @@
 
     /* Set the initial UI state. */
     updateNavMenuControlFields( control );
+    hideCheckboxForMenuItemsWithParents();
 
     /* Update the UI state when the setting changes programmatically */
     control.setting.bind( () => {
@@ -56,6 +57,33 @@
     control.buttonCheckbox.on( 'click', function () {
       setNavMenuSetting( control.setting, this.checked );
     } );
+
+    $(document).on('mouseup', '.menu-item-handle, .menus-move', function()
+    {
+      setTimeout(hideCheckboxForMenuItemsWithParents, 1000);
+    });
+  }
+
+  /*
+   * Hide 'Display as button' checkbox on any menu items
+   * that aren't at the top level
+   */
+  function hideCheckboxForMenuItemsWithParents()
+  {
+    $('.customize-control-nav_menu_item').each(function() {
+      var menuItem = $(this);
+      var checkBox = menuItem.find("#menu-item-button");
+
+      if(!menuItem.hasClass('menu-item-depth-0'))
+      {
+        /* Hide the whole label object */
+        checkBox.parent().hide();
+      }
+      else
+      {
+        checkBox.parent().show();
+      }
+    });
   }
 
   /**
